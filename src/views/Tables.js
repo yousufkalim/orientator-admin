@@ -74,7 +74,7 @@ const Tables = () => {
                           <img
                             alt="..."
                             src={
-                              require("../../assets/img/theme/bootstrap.jpg")
+                              require("../assets/img/theme/bootstrap.jpg")
                                 .default
                             }
                           />
@@ -105,7 +105,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -126,7 +126,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -147,7 +147,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -168,7 +168,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
@@ -239,8 +239,7 @@ const Tables = () => {
                           <img
                             alt="..."
                             src={
-                              require("../../assets/img/theme/angular.jpg")
-                                .default
+                              require("../assets/img/theme/angular.jpg").default
                             }
                           />
                         </a>
@@ -270,7 +269,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -291,7 +290,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -312,7 +311,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -333,7 +332,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
@@ -404,8 +403,7 @@ const Tables = () => {
                           <img
                             alt="..."
                             src={
-                              require("../../assets/img/theme/sketch.jpg")
-                                .default
+                              require("../assets/img/theme/sketch.jpg").default
                             }
                           />
                         </a>
@@ -433,7 +431,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -454,7 +452,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -475,7 +473,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -496,7 +494,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
@@ -567,8 +565,7 @@ const Tables = () => {
                           <img
                             alt="..."
                             src={
-                              require("../../assets/img/theme/react.jpg")
-                                .default
+                              require("../assets/img/theme/react.jpg").default
                             }
                           />
                         </a>
@@ -598,7 +595,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -619,7 +616,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -640,7 +637,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -661,7 +658,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
@@ -731,9 +728,7 @@ const Tables = () => {
                         >
                           <img
                             alt="..."
-                            src={
-                              require("../../assets/img/theme/vue.jpg").default
-                            }
+                            src={require("../assets/img/theme/vue.jpg").default}
                           />
                         </a>
                         <Media>
@@ -762,7 +757,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -783,7 +778,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -804,7 +799,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -825,7 +820,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
@@ -975,7 +970,7 @@ const Tables = () => {
                           <img
                             alt="..."
                             src={
-                              require("../../assets/img/theme/bootstrap.jpg")
+                              require("../assets/img/theme/bootstrap.jpg")
                                 .default
                             }
                           />
@@ -1006,7 +1001,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -1027,7 +1022,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -1048,7 +1043,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -1069,7 +1064,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
@@ -1140,8 +1135,7 @@ const Tables = () => {
                           <img
                             alt="..."
                             src={
-                              require("../../assets/img/theme/angular.jpg")
-                                .default
+                              require("../assets/img/theme/angular.jpg").default
                             }
                           />
                         </a>
@@ -1171,7 +1165,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -1192,7 +1186,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -1210,7 +1204,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -1231,7 +1225,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
@@ -1302,8 +1296,7 @@ const Tables = () => {
                           <img
                             alt="..."
                             src={
-                              require("../../assets/img/theme/sketch.jpg")
-                                .default
+                              require("../assets/img/theme/sketch.jpg").default
                             }
                           />
                         </a>
@@ -1331,7 +1324,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -1352,7 +1345,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -1373,7 +1366,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -1394,7 +1387,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
@@ -1465,8 +1458,7 @@ const Tables = () => {
                           <img
                             alt="..."
                             src={
-                              require("../../assets/img/theme/react.jpg")
-                                .default
+                              require("../assets/img/theme/react.jpg").default
                             }
                           />
                         </a>
@@ -1496,7 +1488,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -1517,7 +1509,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -1538,7 +1530,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -1559,7 +1551,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
@@ -1629,9 +1621,7 @@ const Tables = () => {
                         >
                           <img
                             alt="..."
-                            src={
-                              require("../../assets/img/theme/vue.jpg").default
-                            }
+                            src={require("../assets/img/theme/vue.jpg").default}
                           />
                         </a>
                         <Media>
@@ -1660,7 +1650,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-1-800x800.jpg")
+                              require("../assets/img/theme/team-1-800x800.jpg")
                                 .default
                             }
                           />
@@ -1681,7 +1671,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-2-800x800.jpg")
+                              require("../assets/img/theme/team-2-800x800.jpg")
                                 .default
                             }
                           />
@@ -1702,7 +1692,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-3-800x800.jpg")
+                              require("../assets/img/theme/team-3-800x800.jpg")
                                 .default
                             }
                           />
@@ -1723,7 +1713,7 @@ const Tables = () => {
                             alt="..."
                             className="rounded-circle"
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg")
+                              require("../assets/img/theme/team-4-800x800.jpg")
                                 .default
                             }
                           />
