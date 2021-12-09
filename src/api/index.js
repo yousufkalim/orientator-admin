@@ -14,15 +14,11 @@ const api = async (method = "get", uri, body) => {
     axios[method](url, body)
       .then((res) => resolve(res.data))
       .catch((err) => {
-        if (
-          (err?.response?.status === 403 &&
-            window.location.pathname !== "/auth/login") ||
-          window.location.pathname !== "/auth/register"
-        ) {
+        if (err?.response?.status === 403) {
           window.location = "/auth/login";
         } else {
           console.log("API Error --------> ", err);
-          toast.error(err?.response?.data ? err.response.data : err?.message);
+          toast.error(err?.response?.data?.message || err?.message);
           reject(err);
         }
       });
