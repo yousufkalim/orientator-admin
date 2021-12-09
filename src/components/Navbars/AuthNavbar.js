@@ -34,13 +34,12 @@ const AdminNavbar = () => {
     <>
       <Navbar className="navbar-top navbar-horizontal navbar-dark" expand="md">
         <Container className="px-4">
-          <NavbarBrand to="/" tag={Link}>
-            <img
+          <NavbarBrand to="/auth/login" tag={Link}>
+            {/* <img
               alt="..."
-              src={
-                require("../../assets/img/brand/argon-react-white.png").default
-              }
-            />
+              src={require("../../assets/img/brand/passtotrip.png").default}
+            /> */}
+            <strong>PassToTrip</strong>
           </NavbarBrand>
           <button className="navbar-toggler" id="navbar-collapse-main">
             <span className="navbar-toggler-icon" />
