@@ -18,6 +18,7 @@
 
 // reactstrap components
 import { useState } from "react";
+import api from "api";
 import {
   Button,
   Card,
@@ -34,6 +35,19 @@ import {
 } from "reactstrap";
 
 const Login = () => {
+  let [user, setUser] = useState({});
+
+  const handleInput = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = () => {
+    api("post", "/admins/login", user).then((res) => {
+      localStorage.setItem("token", res.token);
+      window.location = "/admin/index";
+    });
+  };
+
   return (
     <>
       <Col lg="5" md="7">
@@ -94,7 +108,9 @@ const Login = () => {
                   <Input
                     placeholder="Email"
                     type="email"
+                    name="email"
                     autoComplete="new-email"
+                    onChange={handleInput}
                   />
                 </InputGroup>
               </FormGroup>
@@ -108,7 +124,9 @@ const Login = () => {
                   <Input
                     placeholder="Password"
                     type="password"
+                    name="password"
                     autoComplete="new-password"
+                    onChange={handleInput}
                   />
                 </InputGroup>
               </FormGroup>
@@ -126,7 +144,12 @@ const Login = () => {
                 </label>
               </div>
               <div className="text-center">
-                <Button className="my-4" color="primary" type="button">
+                <Button
+                  className="my-4"
+                  color="primary"
+                  type="button"
+                  onClick={handleSubmit}
+                >
                   Sign in
                 </Button>
               </div>

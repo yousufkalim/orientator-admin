@@ -17,6 +17,8 @@
 */
 import React from "react";
 import { useLocation, Route, Switch, Redirect } from "react-router-dom";
+import api from "api";
+import { Store, UpdateStore } from "StoreContext";
 // reactstrap components
 import { Container } from "reactstrap";
 // core components
@@ -30,15 +32,27 @@ const Admin = (props) => {
   const mainContent = React.useRef(null);
   const location = useLocation();
 
+  const { loggedIn } = Store();
+  const updateStore = UpdateStore();
+
   React.useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     mainContent.current.scrollTop = 0;
+
+    // checkauth
+    api("get", "/admins/auth").then((data) => {
+      updateStore({
+        loggedIn: true,
+        token: data.token,
+        user: data.admin,
+      });
+    });
   }, [location]);
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/admin") {
+      if (prop.layout === "/admin" && loggedIn) {
         return (
           <Route
             path={prop.layout + prop.path}
