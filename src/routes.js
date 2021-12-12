@@ -17,6 +17,7 @@
 */
 import Index from "views/Index.js";
 import Articles from "views/articles/Articles";
+import Construction from "views/Construction";
 import Profile from "views/Profile.js";
 import Maps from "views/Maps.js";
 import Register from "views/Register.js";
@@ -40,45 +41,45 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/icons",
-    name: "Icons",
+    path: "/admins",
+    name: "Admins",
     icon: "ni ni-planet text-blue",
-    component: Icons,
+    component: Construction,
     layout: "/admin",
   },
   {
-    path: "/maps",
-    name: "Maps",
+    path: "/creators",
+    name: "Creators",
     icon: "ni ni-pin-3 text-orange",
-    component: Maps,
+    component: Construction,
     layout: "/admin",
   },
   {
     path: "/user-profile",
     name: "User Profile",
     icon: "ni ni-single-02 text-yellow",
-    component: Profile,
+    component: Construction,
     layout: "/admin",
   },
   {
-    path: "/tables",
-    name: "Tables",
+    path: "/users",
+    name: "Users",
     icon: "ni ni-bullet-list-67 text-red",
-    component: Tables,
+    component: Construction,
     layout: "/admin",
-  },
-  {
-    path: "/login",
-    name: "Login",
-    icon: "ni ni-key-25 text-info",
-    component: Login,
-    layout: "/auth",
   },
   {
     path: "/register",
     name: "Register",
-    icon: "ni ni-circle-08 text-pink",
+    icon: "ni ni-key-25 text-info",
     component: Register,
+    layout: "/auth",
+  },
+  {
+    path: "/login",
+    name: "Login",
+    icon: "ni ni-circle-08 text-pink",
+    component: Login,
     layout: "/auth",
   },
 ];
