@@ -175,8 +175,14 @@ const Articles = () => {
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-menu-arrow" right>
                               <DropdownItem
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
+                                onClick={() =>
+                                  window
+                                    .open(
+                                      `https://passtotrip.com/blog/${article._id}`,
+                                      "_blank"
+                                    )
+                                    .focus()
+                                }
                               >
                                 View
                               </DropdownItem>
