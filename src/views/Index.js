@@ -175,7 +175,7 @@ const Index = (props) => {
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">/passtotrip/</th>
+                    <th scope="row">/orientator/</th>
                     <td>4,569</td>
                     <td>340</td>
                     <td>
@@ -183,7 +183,7 @@ const Index = (props) => {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/passtotrip/index.html</th>
+                    <th scope="row">/orientator/index.html</th>
                     <td>3,985</td>
                     <td>319</td>
                     <td>
@@ -192,7 +192,7 @@ const Index = (props) => {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/passtotrip/charts.html</th>
+                    <th scope="row">/orientator/charts.html</th>
                     <td>3,513</td>
                     <td>294</td>
                     <td>
@@ -201,7 +201,7 @@ const Index = (props) => {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/passtotrip/tables.html</th>
+                    <th scope="row">/orientator/tables.html</th>
                     <td>2,050</td>
                     <td>147</td>
                     <td>
@@ -209,7 +209,7 @@ const Index = (props) => {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/passtotrip/profile.html</th>
+                    <th scope="row">/orientator/profile.html</th>
                     <td>1,795</td>
                     <td>190</td>
                     <td>

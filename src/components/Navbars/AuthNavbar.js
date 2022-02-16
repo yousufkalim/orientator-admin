@@ -39,7 +39,7 @@ const AdminNavbar = () => {
               alt="..."
               src={require("../../assets/img/brand/passtotrip.png").default}
             /> */}
-            <strong>PassToTrip</strong>
+            <strong>Orientator</strong>
           </NavbarBrand>
           <button className="navbar-toggler" id="navbar-collapse-main">
             <span className="navbar-toggler-icon" />

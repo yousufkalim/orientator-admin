@@ -29,11 +29,11 @@ const Footer = () => {
             © {new Date().getFullYear()}{" "}
             <a
               className="font-weight-bold ml-1"
-              href="https://www.passtotrip.com"
+              href="https://www.orientator.com"
               rel="noopener noreferrer"
               target="_blank"
             >
-              PassToTrip
+              Orientator
             </a>
           </div>
         </Col>

@@ -178,7 +178,7 @@ const Articles = () => {
                                 onClick={() =>
                                   window
                                     .open(
-                                      `https://passtotrip.com/blog/${article._id}`,
+                                      `http://localhost:3000/blog/${article._id}`,
                                       "_blank"
                                     )
                                     .focus()
