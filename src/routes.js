@@ -24,6 +24,8 @@ import Register from "views/Register.js";
 import Login from "views/Login.js";
 import Tables from "views/Tables.js";
 import Icons from "views/Icons.js";
+import Users from "views/users/Users.js";
+import Results from "views/Results.js"
 
 var routes = [
   {
@@ -40,34 +42,42 @@ var routes = [
     component: Articles,
     layout: "/admin",
   },
-  {
-    path: "/admins",
-    name: "Admins",
-    icon: "ni ni-planet text-blue",
-    component: Construction,
-    layout: "/admin",
-  },
-  {
-    path: "/creators",
-    name: "Creators",
-    icon: "ni ni-pin-3 text-orange",
-    component: Construction,
-    layout: "/admin",
-  },
-  {
-    path: "/user-profile",
-    name: "User Profile",
-    icon: "ni ni-single-02 text-yellow",
-    component: Construction,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/admins",
+  //   name: "Admins",
+  //   icon: "ni ni-planet text-blue",
+  //   component: Construction,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/creators",
+  //   name: "Creators",
+  //   icon: "ni ni-pin-3 text-orange",
+  //   component: Construction,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/user-profile",
+  //   name: "User Profile",
+  //   icon: "ni ni-single-02 text-yellow",
+  //   component: Construction,
+  //   layout: "/admin",
+  // },
   {
     path: "/users",
     name: "Users",
-    icon: "ni ni-bullet-list-67 text-red",
-    component: Construction,
+    icon: "ni ni-single-02 text-yellow",
+    component: Users,
     layout: "/admin",
   },
+   {
+    path: "/results",
+    name: "Results",
+    icon: "ni ni-bullet-list-67 text-red",
+    component: Results,
+    layout: "/admin",
+  },
+
   {
     path: "/register",
     name: "Register",
@@ -82,5 +92,6 @@ var routes = [
     component: Login,
     layout: "/auth",
   },
+  
 ];
 export default routes;

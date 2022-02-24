@@ -25,6 +25,8 @@ import { Container } from "reactstrap";
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import AdminFooter from "components/Footers/AdminFooter.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
+import SingleUser from "views/users/SingleUser.js";
+import SingleResult from "views/users/SingleResult.js";
 
 import routes from "routes.js";
 
@@ -77,7 +79,6 @@ const Admin = (props) => {
     }
     return "Brand";
   };
-
   return (
     <>
       <Sidebar
@@ -95,7 +96,18 @@ const Admin = (props) => {
           brandText={getBrandText(props.location.pathname)}
         />
         <Switch>
+        <Route
+            exact
+            path="/admin/users/:id"
+            component={SingleUser}
+          />
+          <Route
+            exact
+            path="/admin/result/:id"
+            component={SingleResult}
+          />
           {getRoutes(routes)}
+           
           <Redirect from="*" to="/admin/index" />
         </Switch>
         <Container fluid>
