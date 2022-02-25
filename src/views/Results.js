@@ -28,8 +28,8 @@ import {
 // core components
 import Header from "components/Headers/Header.js";
 const Results = () => {
-    const updateStore = UpdateStore();
-    const history = useHistory();
+  const updateStore = UpdateStore();
+  const history = useHistory();
   const { results } = Store();
   const [page, setPage] = React.useState(0);
   const [count, setCount] = useState(0);
@@ -49,7 +49,6 @@ const Results = () => {
       `/admin/results/get-results?pageNumber=${page}&pageSize=${rowsPerPage}`
     );
     console.log("resis", results);
-
     if (res) {
       updateStore({ results: res?.results });
       setCount(res?.totalResults);
