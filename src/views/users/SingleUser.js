@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Store, UpdateStore } from "StoreContext";
 import api from "api";
@@ -29,18 +28,18 @@ import {
 import Header from "components/Headers/Header.js";
 
 const SingleUser = () => {
-    const { id } = useParams();
-    const updateStore = UpdateStore();
-    const history = useHistory();
-      const { singleUserResults } = Store();
-    const [loading, setLoading] = useState(false);
-      // Get All Results of a User
+  const { id } = useParams();
+  const updateStore = UpdateStore();
+  const history = useHistory();
+  const { singleUserResults } = Store();
+  const [loading, setLoading] = useState(false);
+  // Get All Results of a User
   useEffect(() => {
     getUserResults();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  let getUserResults = async () => { 
+  let getUserResults = async () => {
     setLoading(true);
     let res = await api("get", `/admin/results/user-results/${id}`);
     if (res) {
@@ -48,7 +47,7 @@ const SingleUser = () => {
       setLoading(false);
     }
   };
-  console.log("singleUserResults are",singleUserResults)
+  console.log("singleUserResults are", singleUserResults);
 
   return (
     <>
@@ -58,60 +57,59 @@ const SingleUser = () => {
         <Row>
           <div className="col">
             <Card className="shadow border-0">
-            {loading?<h1>chargement d'un seul utilisateur</h1>:(  <Table className="align-items-center table-flush" responsive>
-                <thead className="thead-light">
-                  <tr>
-                    <th scope="col">Email</th>
-                    <th scope="col">Domain</th>
-                    <th scope="col">Type of Job</th>
-                    
-                    <th scope="col" />
-                  </tr>
-                </thead>
-                <tbody>
-                  {singleUserResults?.map((user) => {
-                    return (
+              {loading ? (
+                <h1>chargement d'un seul utilisateur</h1>
+              ) : (
+                <Table className="align-items-center table-flush" responsive>
+                  <thead className="thead-light">
+                    <tr>
+                      <th scope="col">Email</th>
+                      <th scope="col">Domain</th>
+                      <th scope="col">Type of Job</th>
+
+                      <th scope="col" />
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {singleUserResults?.map((user) => {
+                      return (
                         <tr>
-                         <td title={user.user.email}>
-                       {user.user.email}
-                        </td>
-                         <td title={user.domain}>
-                       {user.domain}}
-                        </td>
-                         <td title={user.type_of_job}>
-                       {user.type_of_job}
-                        </td>
-                       
-                      <td className="text-right">
-                          <UncontrolledDropdown>
-                            <DropdownToggle
-                              className="btn-icon-only text-light"
-                              href="#pablo"
-                              role="button"
-                              size="sm" 
-                              color=""
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fas fa-ellipsis-v" />
-                            </DropdownToggle>
-                            <DropdownMenu className="dropdown-menu-arrow" right>
-                              <DropdownItem
-                                 onClick={() =>
-                                    history.push(
-                                      `/admin/result/${user._id}`
-                                    )
-                                  }
+                          <td title={user.user.email}>{user.user.email}</td>
+                          <td title={user.domain}>{user.domain}}</td>
+                          <td title={user.type_of_job}>{user.type_of_job}</td>
+
+                          <td className="text-right">
+                            <UncontrolledDropdown>
+                              <DropdownToggle
+                                className="btn-icon-only text-light"
+                                href="#pablo"
+                                role="button"
+                                size="sm"
+                                color=""
+                                onClick={(e) => e.preventDefault()}
                               >
-                              View Result
-                              </DropdownItem>
-                            </DropdownMenu>
-                          </UncontrolledDropdown>
-                        </td>
+                                <i className="fas fa-ellipsis-v" />
+                              </DropdownToggle>
+                              <DropdownMenu
+                                className="dropdown-menu-arrow"
+                                right
+                              >
+                                <DropdownItem
+                                  onClick={() =>
+                                    history.push(`/admin/result/${user._id}`)
+                                  }
+                                >
+                                  Voir résultat
+                                </DropdownItem>
+                              </DropdownMenu>
+                            </UncontrolledDropdown>
+                          </td>
                         </tr>
-                    )})}
-                </tbody>
-              </Table>)}
-              
+                      );
+                    })}
+                  </tbody>
+                </Table>
+              )}
             </Card>
           </div>
         </Row>

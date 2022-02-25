@@ -25,19 +25,19 @@ import Login from "views/Login.js";
 import Tables from "views/Tables.js";
 import Icons from "views/Icons.js";
 import Users from "views/users/Users.js";
-import Results from "views/Results.js"
+import Results from "views/Results.js";
 
 var routes = [
   {
     path: "/index",
-    name: "Dashboard",
+    name: "Tableau de bord",
     icon: "ni ni-tv-2 text-primary",
     component: Index,
     layout: "/admin",
   },
   {
     path: "/articles",
-    name: "Articles",
+    name: "Blog",
     icon: "ni ni-single-copy-04 text-red",
     component: Articles,
     layout: "/admin",
@@ -65,14 +65,14 @@ var routes = [
   // },
   {
     path: "/users",
-    name: "Users",
+    name: "Useutilisateursrs",
     icon: "ni ni-single-02 text-yellow",
     component: Users,
     layout: "/admin",
   },
-   {
+  {
     path: "/results",
-    name: "Results",
+    name: "Résultat",
     icon: "ni ni-bullet-list-67 text-red",
     component: Results,
     layout: "/admin",
@@ -92,6 +92,5 @@ var routes = [
     component: Login,
     layout: "/auth",
   },
-  
 ];
 export default routes;

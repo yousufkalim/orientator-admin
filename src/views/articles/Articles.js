@@ -93,7 +93,7 @@ const Articles = () => {
             <Card className="shadow">
               <CardHeader className="border-0">
                 <div className="d-flex justify-content-between ">
-                  <h3 className="mb-0">Articles</h3>
+                  <h3 className="mb-0">Blog</h3>
                   <Button
                     color="primary"
                     href="#pablo"
@@ -101,7 +101,7 @@ const Articles = () => {
                     size="md"
                   >
                     <i className="ni ni-fat-add"></i>
-                    Add Article
+                    Ajouter un blog
                   </Button>
                 </div>
               </CardHeader>
@@ -178,7 +178,7 @@ const Articles = () => {
                                 onClick={() =>
                                   window
                                     .open(
-                                      `http://localhost:3000/blog/${article._id}`,
+                                      `https://orientator-demo.web.app/blog/${article._id}`,
                                       "_blank"
                                     )
                                     .focus()

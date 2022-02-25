@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Store, UpdateStore } from "StoreContext";
 import api from "api";
@@ -27,9 +26,10 @@ import {
 
 // core components
 import Header from "components/Headers/Header.js";
+import ExportExecl from "views/exportfiles/ExportExecl.js";
 const Users = () => {
-    const updateStore = UpdateStore();
-    const history = useHistory();
+  const updateStore = UpdateStore();
+  const history = useHistory();
   const { Users } = Store();
   const [page, setPage] = React.useState(0);
   const [count, setCount] = useState(0);
@@ -53,7 +53,19 @@ const Users = () => {
       setLoading(false);
     }
   };
-  console.log("users are",Users)
+  console.log("users are", Users);
+
+  // Exporting
+  const myHeader = [
+    "Prénom",
+    "Nom",
+    "Date de naissance",
+    "addresse",
+    "email",
+    "phone",
+    "Classe",
+    "Établissement actuel",
+  ];
 
   return (
     <>
@@ -62,14 +74,17 @@ const Users = () => {
       <Container className="mt--7" fluid>
         <Row>
           <div className="col">
-        <Card className="shadow">
-             
+            <Card className="shadow">
+              <CardHeader className="border-0">
+                <ExportExecl Users={Users} myHeader={myHeader} />
+              </CardHeader>
+
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
                     <th scope="col">Email</th>
-                    <th scope="col">FirstName</th>
-                    <th scope="col">LastName</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Nom</th>
                     <th scope="col">Phone </th>
                     <th scope="col" />
                   </tr>
@@ -77,26 +92,18 @@ const Users = () => {
                 <tbody>
                   {Users?.map((user) => {
                     return (
-                        <tr>
-                         <td title={user.email}>
-                       {user.email}
-                        </td>
-                         <td title={user.first_name}>
-                       {user.first_name}
-                        </td>
-                         <td title={user.last_name}>
-                       {user.last_name}
-                        </td>
-                         <td title={user.phoe}>
-                       {user.phone}
-                        </td>
-                      <td className="text-right">
+                      <tr>
+                        <td title={user.email}>{user.email}</td>
+                        <td title={user.first_name}>{user.first_name}</td>
+                        <td title={user.last_name}>{user.last_name}</td>
+                        <td title={user.phoe}>{user.phone}</td>
+                        <td className="text-right">
                           <UncontrolledDropdown>
                             <DropdownToggle
                               className="btn-icon-only text-light"
                               href="#pablo"
                               role="button"
-                              size="sm" 
+                              size="sm"
                               color=""
                               onClick={(e) => e.preventDefault()}
                             >
@@ -104,23 +111,22 @@ const Users = () => {
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-menu-arrow" right>
                               <DropdownItem
-                                 onClick={() =>
-                                    history.push(
-                                      `/admin/users/${user._id}`
-                                    )
-                                  }
+                                onClick={() =>
+                                  history.push(`/admin/users/${user._id}`)
+                                }
                               >
-                              View User
+                                Afficher l'utilisateur
                               </DropdownItem>
                             </DropdownMenu>
                           </UncontrolledDropdown>
                         </td>
-                        </tr>
-                    )})}
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </Table>
 
-                  {/* ///////////     Pagination     ///////////// */}
+              {/* ///////////     Pagination     ///////////// */}
               <CardFooter className="py-4">
                 <nav aria-label="...">
                   <Pagination
@@ -129,7 +135,6 @@ const Users = () => {
                   >
                     <PaginationItem className="disabled">
                       <PaginationLink
-                        
                         onClick={(e) => e.preventDefault()}
                         tabIndex="-1"
                       >
@@ -137,34 +142,24 @@ const Users = () => {
                         <span className="sr-only">Previous</span>
                       </PaginationLink>
                     </PaginationItem>
-                    <PaginationItem className={`${page==0&&"active"}`}>
-                      <PaginationLink
-                        
-                        onClick={(e) => setPage(0)}
-                      >
+                    <PaginationItem className={`${page == 0 && "active"}`}>
+                      <PaginationLink onClick={(e) => setPage(0)}>
                         1
                       </PaginationLink>
                     </PaginationItem>
-                    <PaginationItem className={`${page==1&&"active"}`}>
-                      <PaginationLink
-                        
-                        onClick={(e) => setPage(1)}
-                      >
+                    <PaginationItem className={`${page == 1 && "active"}`}>
+                      <PaginationLink onClick={(e) => setPage(1)}>
                         2 <span className="sr-only">(current)</span>
                       </PaginationLink>
                     </PaginationItem>
-                    <PaginationItem className={`${page==2&&"active"}`}>
-                      <PaginationLink
-                        
-                        onClick={(e) => setPage(2)}
-                      >
+                    <PaginationItem className={`${page == 2 && "active"}`}>
+                      <PaginationLink onClick={(e) => setPage(2)}>
                         3
                       </PaginationLink>
                     </PaginationItem>
-                    <PaginationItem className={`${page>2&&"active"}`}>
+                    <PaginationItem className={`${page > 2 && "active"}`}>
                       <PaginationLink
-                        
-                        onClick={(e) => setPage(prev=>prev+1)}
+                        onClick={(e) => setPage((prev) => prev + 1)}
                       >
                         <i className="fas fa-angle-right" />
                         <span className="sr-only">Next</span>
