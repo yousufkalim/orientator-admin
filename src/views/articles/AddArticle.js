@@ -37,11 +37,9 @@ const AddArticle = ({ openModal, handleModal, getArticles }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-
     for (const property in blog) {
       formData.append(property, blog[property]);
     }
-
     api("post", "/blogs", formData)
       .then((res) => {
         toast.success("Article added successfully");

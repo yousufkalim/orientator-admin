@@ -41,11 +41,9 @@ const EditArticle = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-
     for (const property in blog) {
       formData.append(property, blog[property]);
     }
-
     api("put", `/blogs/${blog._id}`, formData)
       .then((res) => {
         toast.success("Article updated successfully");
