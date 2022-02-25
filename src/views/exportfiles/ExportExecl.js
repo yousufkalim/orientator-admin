@@ -52,7 +52,7 @@ const ExportExecl = ({ Users, myHeader }) => {
   // Render
   return (
     <div className="d-flex justify-content-between ">
-      <h3 className="mb-0">Useutilisateursrs</h3>
+      <h3 className="mb-0">utilisateurs</h3>
       <Button
         color="primary"
         href="#pablo"
