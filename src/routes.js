@@ -32,7 +32,7 @@ var routes = [
     path: "/index",
     name: "Tableau de bord",
     icon: "ni ni-tv-2 text-primary",
-    component: Index,
+    component: Articles,
     layout: "/admin",
   },
   {
@@ -65,7 +65,7 @@ var routes = [
   // },
   {
     path: "/users",
-    name: "utilisateurs",
+    name: "Utilisateurs",
     icon: "ni ni-single-02 text-yellow",
     component: Users,
     layout: "/admin",

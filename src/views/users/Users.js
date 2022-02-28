@@ -125,7 +125,6 @@ const Users = () => {
                   })}
                 </tbody>
               </Table>
-
               {/* ///////////     Pagination     ///////////// */}
               <CardFooter className="py-4">
                 <nav aria-label="...">
