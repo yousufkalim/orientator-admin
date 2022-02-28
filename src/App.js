@@ -35,7 +35,6 @@ function App() {
         autoClose={3000}
         transition={Flip}
       />
-
       <BrowserRouter>
         <Switch>
           <Route path="/admin" render={(props) => <AdminLayout {...props} />} />

@@ -66,6 +66,11 @@ const Results = () => {
               <h1>chargement des résultats...</h1>
             ) : (
               <Card className="shadow">
+                <CardHeader className="border-0">
+                  <div className="d-flex justify-content-between ">
+                    <h3 className="mb-0">Résultat</h3>
+                  </div>
+                </CardHeader>
                 <Table className="align-items-center table-flush" responsive>
                   <thead className="thead-light">
                     <tr>
