@@ -178,7 +178,7 @@ const Articles = () => {
                                 onClick={() =>
                                   window
                                     .open(
-                                      `https://orientator-demo.web.app/blog/${article._id}`,
+                                      `https://orientator.com/blog/${article._id}`,
                                       "_blank"
                                     )
                                     .focus()
