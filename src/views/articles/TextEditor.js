@@ -1,0 +1,154 @@
+import React, { useState, useRef } from "react";
+import JoditEditor from "jodit-react";
+export default function Index(props) {
+  const editor = useRef(null);
+  const config = {
+    readonly: false,
+    enableDragAndDropFileToEditor: true,
+    uploader: {
+      url: `${process.env.REACT_APP_SERVER_URL}/images`,
+      format: "json",
+      pathVariableName: "path",
+      filesVariableName: function (t) {
+        return "image";
+      },
+      prepareData: function (data) {
+        return data;
+      },
+      isSuccess: function (resp) {
+        if (resp) {
+          return true;
+        }
+      },
+      process: function (resp) {
+        return {
+          file: `${process.env.REACT_APP_SERVER_MEDIA_URL}${resp.image}` || [],
+        };
+      },
+      defaultHandlerSuccess: function (data) {
+        console.log(data.file);
+        if (data.file) {
+          this.selection.insertImage(data.file);
+        }
+      },
+    },
+    buttons: [
+      "bold",
+      "strikethrough",
+      "underline",
+      "italic",
+      "|",
+      "ul",
+      "ol",
+      "|",
+      "outdent",
+      "indent",
+      "|",
+      "font",
+      "fontsize",
+      "brush",
+      "|",
+      "image",
+      "table",
+      "|",
+      "align",
+      "undo",
+      "redo",
+      "|",
+      "hr",
+      "|",
+      "print",
+    ],
+    buttonsMD: [
+      "bold",
+      "strikethrough",
+      "underline",
+      "italic",
+      "|",
+      "ul",
+      "ol",
+      "|",
+      "outdent",
+      "indent",
+      "|",
+      "font",
+      "fontsize",
+      "brush",
+      "|",
+      "image",
+      "table",
+      "|",
+      "align",
+      "undo",
+      "redo",
+      "|",
+      "hr",
+      "|",
+      "print",
+    ],
+    buttonsSM: [
+      "bold",
+      "strikethrough",
+      "underline",
+      "italic",
+      "|",
+      "ul",
+      "ol",
+      "|",
+      "outdent",
+      "indent",
+      "|",
+      "font",
+      "fontsize",
+      "brush",
+      "|",
+      "image",
+      "table",
+      "|",
+      "align",
+      "undo",
+      "redo",
+      "|",
+      "hr",
+      "|",
+      "print",
+    ],
+    buttonsXS: [
+      "bold",
+      "strikethrough",
+      "underline",
+      "italic",
+      "|",
+      "ul",
+      "ol",
+      "|",
+      "outdent",
+      "indent",
+      "|",
+      "font",
+      "fontsize",
+      "brush",
+      "|",
+      "image",
+      "table",
+      "|",
+      "align",
+      "undo",
+      "redo",
+      "|",
+      "hr",
+      "|",
+      "print",
+    ],
+  };
+  return (
+    <JoditEditor
+      ref={editor}
+      value={props.value}
+      config={config}
+      tabIndex={1}
+      onBlur={(newContent) => props.setValue(newContent)}
+      onChange={(newContent) => {}}
+    />
+  );
+}
