@@ -2,11 +2,13 @@ import React from "react";
 import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
 import { useState } from "react";
+import api from "api";
 
 import { Button } from "reactstrap";
 
 // Component
 const ExportExecl = ({ Users, myHeader }) => {
+  const [loading, setLoading] = useState(false);
   // Exporting
 
   // File Type
@@ -30,23 +32,34 @@ const ExportExecl = ({ Users, myHeader }) => {
 
   // exporting excel
   const handleSubmitExcel = async (Users) => {
-    let updatedUsers;
-    if (Users.length > 0) {
-      updatedUsers = Users.map((user) => {
-        return {
-          Prénom: user.first_name,
-          Nom: user.last_name,
-          "Date de naissance": new Date(user.date_of_birth).toLocaleString(),
-          addresse: user.address.label,
-          email: user.email,
-          phone: user.phone,
-          Classe: user.education_level,
-          "Établissement actuel": user.institute,
-        };
-      });
+    setLoading(true);
+    let res = await api("get", `/admin/users/getallusers`);
+    if (res) {
+      // console.log("get all users data1", res.users);
+      let filterUserResults = res.users.filter((user) => user.userResult);
+
+      let updatedUsers;
+      if (filterUserResults.length > 0) {
+        updatedUsers = filterUserResults.map((user) => {
+          return {
+            Prénom: user.first_name,
+            Nom: user.last_name,
+            "Date de naissance": new Date(user.date_of_birth).toLocaleString(),
+            addresse: user.address.label,
+            email: user.email,
+            phone: user.phone,
+            Classe: user.education_level,
+            "Établissement actuel": user.institute,
+            domain: user?.userResult?.domain,
+            Last_answer: user?.userResult?.last_answer,
+            Type_of_job: user?.userResult?.type_of_job,
+          };
+        });
+      }
+      setLoading(false);
+      // console.log("users for export ", updatedUsers);
+      exportToCSV(updatedUsers, " données des utilisateurs");
     }
-    console.log("users for export ", updatedUsers);
-    exportToCSV(updatedUsers, " données des utilisateurs");
   };
 
   // Render
@@ -60,8 +73,9 @@ const ExportExecl = ({ Users, myHeader }) => {
           handleSubmitExcel(Users);
         }}
         size="md"
+        disabled={loading}
       >
-        Exporter excel
+        {loading ? "Chargement en cours" : "Exporter excel"}
       </Button>
     </div>
   );

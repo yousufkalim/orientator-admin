@@ -4,6 +4,7 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import MyUploadAdapter from "utils/MyUploadAdapter";
 import api from "../../api";
+import JoditEditor from "./TextEditor";
 import {
   Modal,
   ModalBody,
@@ -26,6 +27,9 @@ const EditArticle = ({
   setBlog,
   getArticles,
 }) => {
+  let [content, setContent] = useState(
+    blog?.blog_content ? blog?.blog_content : ""
+  );
   const handleFileChange = (e) => {
     setBlog({ ...blog, blog_images: e.target.files[0] });
   };
@@ -41,9 +45,14 @@ const EditArticle = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    for (const property in blog) {
-      formData.append(property, blog[property]);
+    let value = blog;
+    delete value["blog_content"];
+    for (const property in value) {
+      formData.append(property, value[property]);
     }
+    console.log(value);
+    // console.log("content ", typeof content);
+    formData.append("blog_content", content);
     api("put", `/blogs/${blog._id}`, formData)
       .then((res) => {
         toast.success("Article updated successfully");
@@ -137,7 +146,8 @@ const EditArticle = ({
                         >
                           Article
                         </label>
-                        <CKEditor
+                        <JoditEditor setValue={setContent} value={content} />
+                        {/* <CKEditor
                           editor={ClassicEditor}
                           data={blog.blog_content}
                           onReady={(editor) => {
@@ -156,7 +166,7 @@ const EditArticle = ({
                               };
                             });
                           }}
-                        />
+                        /> */}
                       </FormGroup>
                     </Col>
                   </Row>

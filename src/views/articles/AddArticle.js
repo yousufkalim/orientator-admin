@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import MyUploadAdapter from "utils/MyUploadAdapter";
+import JoditEditor from "./TextEditor";
 import api from "../../api";
 import {
   Modal,
@@ -21,6 +22,7 @@ import {
 
 const AddArticle = ({ openModal, handleModal, getArticles }) => {
   let [blog, setBlog] = useState({ is_featured: false });
+  let [content, setContent] = useState("");
 
   const handleFileChange = (e) => {
     setBlog({ ...blog, blog_images: e.target.files[0] });
@@ -40,6 +42,9 @@ const AddArticle = ({ openModal, handleModal, getArticles }) => {
     for (const property in blog) {
       formData.append(property, blog[property]);
     }
+    formData.append("blog_content", content);
+    // console.log("blog_content", formData);
+    // console.log("blog_content", content);
     api("post", "/blogs", formData)
       .then((res) => {
         toast.success("Article added successfully");
@@ -133,7 +138,8 @@ const AddArticle = ({ openModal, handleModal, getArticles }) => {
                         >
                           Article
                         </label>
-                        <CKEditor
+                        <JoditEditor setValue={setContent} value={content} />
+                        {/* <CKEditor
                           editor={ClassicEditor}
                           data={blog.blog_content}
                           onReady={(editor) => {
@@ -152,7 +158,7 @@ const AddArticle = ({ openModal, handleModal, getArticles }) => {
                               };
                             });
                           }}
-                        />
+                        /> */}
                       </FormGroup>
                     </Col>
                   </Row>

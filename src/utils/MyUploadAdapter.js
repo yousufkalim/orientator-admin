@@ -6,6 +6,7 @@ class MyUploadAdapter {
   }
   // Starts the upload process.
   upload() {
+    console.log("uplad");
     return this.loader.file.then(
       (file) =>
         new Promise((resolve, reject) => {
