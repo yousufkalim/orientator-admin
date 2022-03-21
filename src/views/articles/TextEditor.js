@@ -50,6 +50,7 @@ export default function Index(props) {
       "|",
       "image",
       "table",
+      'link', '|',
       "|",
       "align",
       "undo",
@@ -57,7 +58,6 @@ export default function Index(props) {
       "|",
       "hr",
       "|",
-      "print",
     ],
     buttonsMD: [
       "bold",
@@ -77,6 +77,7 @@ export default function Index(props) {
       "|",
       "image",
       "table",
+      'link', '|',
       "|",
       "align",
       "undo",
@@ -84,7 +85,6 @@ export default function Index(props) {
       "|",
       "hr",
       "|",
-      "print",
     ],
     buttonsSM: [
       "bold",
@@ -104,6 +104,7 @@ export default function Index(props) {
       "|",
       "image",
       "table",
+      'link', '|',
       "|",
       "align",
       "undo",
@@ -111,7 +112,6 @@ export default function Index(props) {
       "|",
       "hr",
       "|",
-      "print",
     ],
     buttonsXS: [
       "bold",
@@ -131,6 +131,7 @@ export default function Index(props) {
       "|",
       "image",
       "table",
+      'link', '|',
       "|",
       "align",
       "undo",
@@ -138,7 +139,6 @@ export default function Index(props) {
       "|",
       "hr",
       "|",
-      "print",
     ],
   };
   return (

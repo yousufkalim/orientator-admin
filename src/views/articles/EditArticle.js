@@ -146,7 +146,13 @@ const EditArticle = ({
                         >
                           Article
                         </label>
-                        <JoditEditor setValue={setContent} value={content} />
+                        <JoditEditor
+                          setValue={setContent}
+                          value={content}
+                          config={{
+
+                          }}
+                        />
                         {/* <CKEditor
                           editor={ClassicEditor}
                           data={blog.blog_content}
