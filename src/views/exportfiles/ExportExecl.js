@@ -35,7 +35,6 @@ const ExportExecl = ({ Users, myHeader }) => {
     setLoading(true);
     let res = await api("get", `/admin/users/getallusers`);
     if (res) {
-      // console.log("get all users data1", res.users);
       let filterUserResults = res.users.filter((user) => user.userResult);
 
       let updatedUsers;
@@ -45,7 +44,7 @@ const ExportExecl = ({ Users, myHeader }) => {
             Prénom: user.first_name,
             Nom: user.last_name,
             "Date de naissance": new Date(user.date_of_birth).toLocaleString(),
-            addresse: user.address.label,
+            addresse: user.address?.label,
             email: user.email,
             phone: user.phone,
             Classe: user.education_level,
