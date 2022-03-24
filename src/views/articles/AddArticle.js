@@ -109,6 +109,27 @@ const AddArticle = ({ openModal, handleModal, getArticles }) => {
                       </FormGroup>
                     </Col>
                   </Row>
+                  <Row>
+                    <Col lg="9" style={{ margin: "auto" }}>
+                      <FormGroup>
+                        <label
+                          className="form-control-label"
+                          htmlFor="input-fname"
+                        >
+                          YouTube Embed Link
+                        </label>
+                        <Input
+                          className="form-control-alternative text-default"
+                          required={true}
+                          placeholder="Enter YouTube Embed Link here"
+                          type="text"
+                          value={blog.yt_link}
+                          name="yt_link"
+                          onChange={handleInput}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
                   {/* <div className="pl-lg-4"> */}
                   <Row>
                     <Col lg="9" style={{ margin: "auto" }}>
