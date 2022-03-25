@@ -51,7 +51,6 @@ const EditArticle = ({
       formData.append(property, value[property]);
     }
     console.log(value);
-    // console.log("content ", typeof content);
     formData.append("blog_content", content);
     api("put", `/blogs/${blog._id}`, formData)
       .then((res) => {
@@ -112,6 +111,27 @@ const EditArticle = ({
                           value={blog.blog_desc}
                           name="blog_desc"
                           rows="3"
+                          onChange={handleInput}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col lg="9" style={{ margin: "auto" }}>
+                      <FormGroup>
+                        <label
+                          className="form-control-label"
+                          htmlFor="input-fname"
+                        >
+                          YouTube Embed Link
+                        </label>
+                        <Input
+                          className="form-control-alternative text-default"
+                          required={true}
+                          placeholder="Enter YouTube Embed Link here"
+                          type="text"
+                          value={blog.yt_link}
+                          name="yt_link"
                           onChange={handleInput}
                         />
                       </FormGroup>
