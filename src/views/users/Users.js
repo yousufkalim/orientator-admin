@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Store, UpdateStore } from "StoreContext";
 import api from "api";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 import {
   Badge,
@@ -29,6 +30,7 @@ import Header from "components/Headers/Header.js";
 import ExportExecl from "views/exportfiles/ExportExecl.js";
 const Users = () => {
   const updateStore = UpdateStore();
+  const pagination = useRef();
   const history = useHistory();
   const { Users } = Store();
   const [page, setPage] = React.useState(0);
@@ -53,7 +55,14 @@ const Users = () => {
       setLoading(false);
     }
   };
-  console.log("users are", Users);
+  // console.log("users are", Users);
+  // {
+  //   console.log("page is ", page);
+  // }
+
+  // {
+  //   console.log("total page is ", Math.ceil(count / 10));
+  // }
 
   // Exporting
   const myHeader = [
@@ -66,6 +75,11 @@ const Users = () => {
     "Classe",
     "Établissement actuel",
   ];
+  const setPageis = ({ selected }) => {
+    console.log(selected === 0 ? 1 : selected);
+    console.log("selected", selected);
+    setPage(selected);
+  };
 
   return (
     <>
@@ -125,46 +139,32 @@ const Users = () => {
                   })}
                 </tbody>
               </Table>
+
               {/* ///////////     Pagination     ///////////// */}
               <CardFooter className="py-4">
-                <nav aria-label="...">
-                  <Pagination
-                    className="pagination justify-content-end mb-0"
-                    listClassName="justify-content-end mb-0"
-                  >
-                    <PaginationItem className="disabled">
-                      <PaginationLink
-                        onClick={(e) => e.preventDefault()}
-                        tabIndex="-1"
-                      >
-                        <i className="fas fa-angle-left" />
-                        <span className="sr-only">Previous</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem className={`${page == 0 && "active"}`}>
-                      <PaginationLink onClick={(e) => setPage(0)}>
-                        1
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem className={`${page == 1 && "active"}`}>
-                      <PaginationLink onClick={(e) => setPage(1)}>
-                        2 <span className="sr-only">(current)</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem className={`${page == 2 && "active"}`}>
-                      <PaginationLink onClick={(e) => setPage(2)}>
-                        3
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem className={`${page > 2 && "active"}`}>
-                      <PaginationLink
-                        onClick={(e) => setPage((prev) => prev + 1)}
-                      >
-                        <i className="fas fa-angle-right" />
-                        <span className="sr-only">Next</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                  </Pagination>
+                <nav
+                  aria-label="..."
+                  className="pagination justify-content-end mb-0"
+                >
+                  <ReactPaginate
+                    ref={pagination}
+                    pageCount={Math.ceil(count / 10)}
+                    // pageRangeDisplayed={4}
+                    marginPagesDisplayed={1}
+                    onPageChange={setPageis}
+                    containerClassName="pagination"
+                    activeClassName="active"
+                    pageLinkClassName="page-link"
+                    breakLinkClassName="page-link"
+                    nextLinkClassName="page-link"
+                    previousLinkClassName="page-link"
+                    pageClassName="page-item"
+                    breakClassName="page-item"
+                    nextClassName="page-item"
+                    previousClassName="page-item"
+                    previousLabel={<>&laquo;</>}
+                    nextLabel={<>&raquo;</>}
+                  />
                 </nav>
               </CardFooter>
             </Card>

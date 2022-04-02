@@ -35,8 +35,7 @@ const ExportExecl = ({ Users, myHeader }) => {
     setLoading(true);
     let res = await api("get", `/admin/users/getallusers`);
     if (res) {
-      let filterUserResults = res.users.filter((user) => user.userResult);
-
+      let filterUserResults = res.users.filter((user) => user);
       let updatedUsers;
       if (filterUserResults.length > 0) {
         updatedUsers = filterUserResults.map((user) => {
@@ -49,9 +48,9 @@ const ExportExecl = ({ Users, myHeader }) => {
             phone: user.phone,
             Classe: user.education_level,
             "Établissement actuel": user.institute,
-            domain: user?.userResult?.domain,
-            Last_answer: user?.userResult?.last_answer,
-            Type_of_job: user?.userResult?.type_of_job,
+            // domain: user?.userResult?.domain,
+            // Last_answer: user?.userResult?.last_answer,
+            // Type_of_job: user?.userResult?.type_of_job,
           };
         });
       }
