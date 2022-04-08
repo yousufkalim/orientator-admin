@@ -33,10 +33,11 @@ const ExportExecl = ({ Users, myHeader }) => {
   // exporting excel
   const handleSubmitExcel = async (Users) => {
     setLoading(true);
-    let res = await api("get", `/admin/users/getallusers`);
+    let res = await api("get", `/admin/users/getalluserswithresult`);
     if (res) {
       let filterUserResults = res.users.filter((user) => user);
       let updatedUsers;
+
       if (filterUserResults.length > 0) {
         updatedUsers = filterUserResults.map((user) => {
           return {
@@ -48,9 +49,9 @@ const ExportExecl = ({ Users, myHeader }) => {
             phone: user.phone,
             Classe: user.education_level,
             "Établissement actuel": user.institute,
-            // domain: user?.userResult?.domain,
-            // Last_answer: user?.userResult?.last_answer,
-            // Type_of_job: user?.userResult?.type_of_job,
+            domain: user?.userResult?.domain,
+            Last_answer: user?.userResult?.last_answer,
+            Type_of_job: user?.userResult?.type_of_job,
           };
         });
       }
