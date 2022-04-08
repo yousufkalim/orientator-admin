@@ -40,6 +40,7 @@ const ExportExecl = ({ Users, myHeader }) => {
 
       if (filterUserResults.length > 0) {
         updatedUsers = filterUserResults.map((user) => {
+          console.log("users for export ", user);
           return {
             Prénom: user.first_name,
             Nom: user.last_name,
@@ -52,6 +53,51 @@ const ExportExecl = ({ Users, myHeader }) => {
             domain: user?.userResult?.domain,
             Last_answer: user?.userResult?.last_answer,
             Type_of_job: user?.userResult?.type_of_job,
+            discriminateQ1: user?.userResult?.desc_answers[0]?.question
+              ? user?.userResult?.desc_answers[0]?.question?.question +
+                " - " +
+                user?.userResult?.desc_answers[0]?.answer
+              : "",
+            discriminateQ2: user?.userResult?.desc_answers[1]?.question
+              ? user?.userResult?.desc_answers[1]?.question?.question +
+                " - " +
+                user?.userResult?.desc_answers[1]?.answer
+              : "",
+            discriminateQ3: user?.userResult?.desc_answers[2]?.question
+              ? user?.userResult?.desc_answers[2]?.question?.question +
+                " - " +
+                user?.userResult?.desc_answers[2]?.answer
+              : "",
+            discriminateQ4: user?.userResult?.desc_answers[3]?.question
+              ? user?.userResult?.desc_answers[3]?.question?.question +
+                " - " +
+                user?.userResult?.desc_answers[3]?.answer
+              : "",
+            discriminateQ5: user?.userResult?.desc_answers[4]?.question
+              ? user?.userResult?.desc_answers[4]?.question?.question +
+                " - " +
+                user?.userResult?.desc_answers[4]?.answer
+              : "",
+            discriminateQ6: user?.userResult?.desc_answers[5]?.question
+              ? user?.userResult?.desc_answers[5]?.question?.question +
+                " - " +
+                user?.userResult?.desc_answers[5]?.answer
+              : "",
+            discriminateQ7: user?.userResult?.desc_answers[6]?.question
+              ? user?.userResult?.desc_answers[6]?.question?.question +
+                " - " +
+                user?.userResult?.desc_answers[6]?.answer
+              : "",
+            discriminateQ8: user?.userResult?.desc_answers[7]?.question
+              ? user?.userResult?.desc_answers[7]?.question?.question +
+                " - " +
+                user?.userResult?.desc_answers[7]?.answer
+              : "",
+            discriminateQ9: user?.userResult?.desc_answers[8]?.question
+              ? user?.userResult?.desc_answers[8]?.question?.question +
+                " - " +
+                user?.userResult?.desc_answers[8]?.answer
+              : "",
           };
         });
       }
