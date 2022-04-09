@@ -23,9 +23,10 @@ export function StoreProvider({ children }) {
     user: {},
     articles: [],
     Users: null,
-    singleUserResults:null,
+    singleUserResults: null,
     singleUserResult: null,
     results: null,
+    videos: [],
   });
 
   const updateStore = (data) => {

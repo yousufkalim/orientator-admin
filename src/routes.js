@@ -26,6 +26,7 @@ import Tables from "views/Tables.js";
 import Icons from "views/Icons.js";
 import Users from "views/users/Users.js";
 import Results from "views/Results.js";
+import Channel from "views/channel/Channel.js";
 
 var routes = [
   {
@@ -77,6 +78,13 @@ var routes = [
     component: Results,
     layout: "/admin",
   },
+  // {
+  //   path: "/channel",
+  //   name: "Channel",
+  //   icon: "ni ni-bullet-list-67 text-red",
+  //   component: Channel,
+  //   layout: "/admin",
+  // },
 
   {
     path: "/register",
