@@ -16,9 +16,10 @@
 
 */
 // reactstrap components
-import { useState, useEffect } from "react";
-import api from "api";
-import { Store, UpdateStore } from "StoreContext";
+import { useState, useEffect } from 'react';
+import api from 'api';
+import { url } from '../../config';
+import { Store, UpdateStore } from 'StoreContext';
 import {
   Badge,
   Card,
@@ -34,12 +35,12 @@ import {
   Container,
   Row,
   UncontrolledTooltip,
-} from "reactstrap";
+} from 'reactstrap';
 // core components
-import AddArticle from "./AddArticle";
-import EditArticle from "./EditArticle";
-import Header from "components/Headers/Header.js";
-import { toast } from "react-toastify";
+import AddArticle from './AddArticle';
+import EditArticle from './EditArticle';
+import Header from 'components/Headers/Header.js';
+import { toast } from 'react-toastify';
 
 const Articles = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -53,7 +54,7 @@ const Articles = () => {
   }, []);
 
   const getArticles = async () => {
-    const data = await api("get", "/blogs");
+    const data = await api('get', '/blogs');
 
     if (data) {
       updateStore({ articles: data });
@@ -72,13 +73,13 @@ const Articles = () => {
   };
 
   const handleDelete = (id) => {
-    api("delete", `/blogs/${id}`)
+    api('delete', `/blogs/${id}`)
       .then(() => {
-        toast.success("Article deleted successfully");
+        toast.success('Article deleted successfully');
         getArticles();
       })
       .catch(() => {
-        toast.error("An error occurred while deleting");
+        toast.error('An error occurred while deleting');
       });
   };
 
@@ -86,117 +87,83 @@ const Articles = () => {
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt--7" fluid>
+      <Container className='mt--7' fluid>
         {/* Table */}
         <Row>
-          <div className="col">
-            <Card className="shadow">
-              <CardHeader className="border-0">
-                <div className="d-flex justify-content-between ">
-                  <h3 className="mb-0">Blog</h3>
-                  <Button
-                    color="primary"
-                    href="#pablo"
-                    onClick={handleModal}
-                    size="md"
-                  >
-                    <i className="ni ni-fat-add"></i>
+          <div className='col'>
+            <Card className='shadow'>
+              <CardHeader className='border-0'>
+                <div className='d-flex justify-content-between '>
+                  <h3 className='mb-0'>Blog</h3>
+                  <Button color='primary' href='#pablo' onClick={handleModal} size='md'>
+                    <i className='ni ni-fat-add'></i>
                     Ajouter un blog
                   </Button>
                 </div>
               </CardHeader>
-              <Table className="align-items-center table-flush" responsive>
-                <thead className="thead-light">
+              <Table className='align-items-center table-flush' responsive>
+                <thead className='thead-light'>
                   <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Created At</th>
-                    <th scope="col">Updated At</th>
-                    <th scope="col" />
+                    <th scope='col'>Title</th>
+                    <th scope='col'>Description</th>
+                    <th scope='col'>Status</th>
+                    <th scope='col'>Created At</th>
+                    <th scope='col'>Updated At</th>
+                    <th scope='col' />
                   </tr>
                 </thead>
                 <tbody>
                   {articles.map((article) => {
                     return (
                       <tr>
-                        <th scope="row">
-                          <Media className="align-items-center">
-                            <a
-                              className="avatar rounded-circle mr-3"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <img
-                                alt="Article"
-                                src={
-                                  process.env.REACT_APP_SERVER_MEDIA_URL +
-                                  article.blog_images
-                                }
-                              />
+                        <th scope='row'>
+                          <Media className='align-items-center'>
+                            <a className='avatar rounded-circle mr-3' href='#pablo' onClick={(e) => e.preventDefault()}>
+                              <img alt='Article' src={url + article.blog_images} />
                             </a>
                             <Media>
-                              <span
-                                className="mb-0 text-sm"
-                                title={article.blog_title}
-                              >
+                              <span className='mb-0 text-sm' title={article.blog_title}>
                                 {article.blog_title?.length > 30
-                                  ? article.blog_title?.substring(0, 30) + "..."
+                                  ? article.blog_title?.substring(0, 30) + '...'
                                   : article.blog_title}
                               </span>
                             </Media>
                           </Media>
                         </th>
                         <td title={article.blog_desc}>
-                          {article.blog_desc?.length > 30
-                            ? article.blog_desc?.substring(0, 30) + "..."
-                            : article.blog_desc}
+                          {article.blog_desc?.length > 30 ? article.blog_desc?.substring(0, 30) + '...' : article.blog_desc}
                         </td>
                         <td>
-                          <Badge color="" className="badge-dot mr-4">
-                            <i className="bg-success" />
+                          <Badge color='' className='badge-dot mr-4'>
+                            <i className='bg-success' />
                             {article.status}
                           </Badge>
                         </td>
                         <td>{new Date(article.createdAt).toDateString()}</td>
                         <td>{new Date(article.updatedAt).toDateString()}</td>
 
-                        <td className="text-right">
+                        <td className='text-right'>
                           <UncontrolledDropdown>
                             <DropdownToggle
-                              className="btn-icon-only text-light"
-                              href="#pablo"
-                              role="button"
-                              size="sm"
-                              color=""
+                              className='btn-icon-only text-light'
+                              href='#pablo'
+                              role='button'
+                              size='sm'
+                              color=''
                               onClick={(e) => e.preventDefault()}
                             >
-                              <i className="fas fa-ellipsis-v" />
+                              <i className='fas fa-ellipsis-v' />
                             </DropdownToggle>
-                            <DropdownMenu className="dropdown-menu-arrow" right>
+                            <DropdownMenu className='dropdown-menu-arrow' right>
                               <DropdownItem
-                                onClick={() =>
-                                  window
-                                    .open(
-                                      `https://orientator.com/blog/${article._id}`,
-                                      "_blank"
-                                    )
-                                    .focus()
-                                }
+                                onClick={() => window.open(`https://orientator.com/blog/${article._id}`, '_blank').focus()}
                               >
                                 View
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                onClick={() => handleEditModal(article)}
-                              >
+                              <DropdownItem href='#pablo' onClick={() => handleEditModal(article)}>
                                 Edit
                               </DropdownItem>
-                              <DropdownItem
-                                href="#pablo"
-                                className="text-danger"
-                                onClick={() => handleDelete(article._id)}
-                              >
+                              <DropdownItem href='#pablo' className='text-danger' onClick={() => handleDelete(article._id)}>
                                 Delete
                               </DropdownItem>
                             </DropdownMenu>
@@ -265,13 +232,7 @@ const Articles = () => {
             </Card>
           </div>
         </Row>
-        {openModal && (
-          <AddArticle
-            openModal={openModal}
-            handleModal={handleModal}
-            getArticles={getArticles}
-          />
-        )}
+        {openModal && <AddArticle openModal={openModal} handleModal={handleModal} getArticles={getArticles} />}
         {editModal && (
           <EditArticle
             openModal={editModal}
